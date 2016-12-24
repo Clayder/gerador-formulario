@@ -69,10 +69,10 @@ class Form
     {
         $this->nome = $nome;
     }
+
     /*
      * Adiciona um objeto ao formulário
      */
-
     public function add(Field $object)
     {
         $this->filds[] = $object->show();

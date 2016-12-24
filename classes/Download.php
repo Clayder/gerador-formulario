@@ -5,7 +5,7 @@ class Download
     const ARQUIVO        = 'formulario.html';
     const CAMINHO_ARQUIVO = '';
 
-    static public function baixar()
+    static public function executar()
     {
         // Define o tempo máximo de execução em 0 para as conexões lentas
         set_time_limit(0);

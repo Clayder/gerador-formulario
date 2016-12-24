@@ -4,7 +4,6 @@ abstract class Field
 {
     protected $name;
     protected $value;
-    protected $editable;
     protected $tag;
 
     public function __construct($name = '')
@@ -27,31 +26,6 @@ abstract class Field
     function setValue($value)
     {
         $this->value = $value;
-    }
-
-    function setStyleClass($styleClass)
-    {
-        $this->styleClass = $styleClass;
-    }
-
-    function setStyleId($styleId)
-    {
-        $this->styleId = $styleId;
-    }
-
-    function setStyleComplement($styleComplement)
-    {
-        $this->styleComplement = $styleComplement;
-    }
-
-    public function setEditable($boolean)
-    {
-        $this->editable = $boolean;
-    }
-
-    public function getEditable()
-    {
-        return $this->editable;
     }
 
     public function getTag()

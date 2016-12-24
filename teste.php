@@ -131,5 +131,5 @@ echo $form->show();
 
 Arquivo::criar($form->show());
  
-Download::baixar();
+Download::executar();
 
