@@ -11,6 +11,8 @@ include_once 'classes/CheckBox.php';
 include_once 'classes/Select.php';
 include_once 'classes/Radio.php';
 include_once 'classes/Button.php';
+include_once 'classes/Arquivo.php';
+include_once 'classes/Download.php';
 
 $form   = new Form('form', 'teste.php', 'post');
 $form->getTag()->setFormClass('class1 class2 class3');
@@ -88,7 +90,7 @@ $options = array(
         'texto' => 'Dois'
     ),
 );
-$t2    = new Select('select', $options, 'Estados');
+$t2      = new Select('select', $options, 'Estados');
 $t2->getTag()->setFormId('id');
 $t2->getTag()->setFormClass('class');
 
@@ -110,7 +112,7 @@ $style = array(
 $t3->getTag()->setFormComplemento($style);
 $form->add($t3);
 
-$t4    = new Radio('radio', "ererre");
+$t4 = new Radio('radio', "ererre");
 $form->add($t4);
 
 /* button */
@@ -124,5 +126,10 @@ $style  = array(
 );
 $hidden->getTag()->setFormComplemento($style);
 $form->add($hidden);
-$form->show();
+
+echo $form->show();
+
+Arquivo::criar($form->show());
+ 
+Download::baixar();
 

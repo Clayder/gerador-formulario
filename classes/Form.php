@@ -20,7 +20,7 @@ class Form
         $this->action = $action;
         $this->method = $method;
         $this->tag    = new Tag();
-        $this->filds = array();
+        $this->filds  = array();
     }
 
     public function getTag()
@@ -69,36 +69,39 @@ class Form
     {
         $this->nome = $nome;
     }
-
     /*
      * Adiciona um objeto ao formulário
      */
+
     public function add(Field $object)
     {
         $this->filds[] = $object->show();
     }
-
     /*
      * Exibir o formulário
      */
+
     public function show()
     {
-        $this->openForm();
-        echo "\n";
-        foreach ($this->filds as $fild) {
-            echo $fild;
-            echo "<br/> \n";
-        }
-        $this->closeForm();
+       return $this->openForm(). "\n" . $this->getFields().$this->closeForm();
     }
 
     public function openForm()
     {
-        echo "<form ".$this->getAction().$this->getNome().$this->getMethod().$this->tag->getFormClass().$this->tag->getFormId().$this->tag->getFormComplemento().">";
+        return "<form ".$this->getAction().$this->getNome().$this->getMethod().$this->tag->getFormClass().$this->tag->getFormId().$this->tag->getFormComplemento().">";
     }
 
     public function closeForm()
     {
-        echo "</form>";
+        return "</form>";
+    }
+
+    public function getFields()
+    {
+        $string = "";
+        foreach ($this->filds as $fild) {
+            $string = $string . $fild . "<br/> \n";
+        }
+        return $string;
     }
 }
