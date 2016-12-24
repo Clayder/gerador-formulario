@@ -1,5 +1,7 @@
 <?php
-class Tag{
+
+class Tag
+{
     private $formId;
     // @var String
     private $formClass;
@@ -8,8 +10,8 @@ class Tag{
 
     function __construct()
     {
-        $this->formId = '';
-        $this->formClass = '';
+        $this->formId          = '';
+        $this->formClass       = '';
         $this->formComplemento = array();
     }
 
@@ -35,9 +37,9 @@ class Tag{
     {
         $tag = "";
         foreach ($this->formComplemento as $key => $value) {
-            $tag = $tag . " $key = '$value'";
+            $tag = $tag." $key = '$value'";
         }
-        return $tag . " ";
+        return $tag." ";
     }
 
     function setFormId($formId)
@@ -47,13 +49,12 @@ class Tag{
 
     function setFormClass($class)
     {
-        $this->formClass = $this->formClass . $class;
+        $this->formClass = $this->formClass.$class;
     }
 
     function setFormComplemento($novoComplemento)
     {
-        $this->formComplemento = array_merge($this->formComplemento, $novoComplemento);
+        $this->formComplemento = array_merge($this->formComplemento,
+            $novoComplemento);
     }
-
 }
-

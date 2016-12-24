@@ -87,7 +87,7 @@ class Form
         echo "\n";
         foreach ($this->filds as $fild) {
             echo $fild;
-            echo "\n";
+            echo "<br/> \n";
         }
         $this->closeForm();
     }

@@ -1,17 +1,21 @@
 <?php
 
-
 /**
  *
  */
 class Text extends Field
 {
 
+    public function __construct($name)
+    {
+        parent::__construct($name);
+    }
+
     /**
      * @inheritDoc
      */
-    public function show():void
+    public function show()
     {
-        // TODO: implement here
+        return $this->input('text');
     }
 }

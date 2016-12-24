@@ -2,20 +2,16 @@
 
 abstract class Field
 {
-
     protected $name;
-
     protected $value;
-
     protected $editable;
-
     protected $tag;
 
     public function __construct($name = '')
     {
-        $this->name = $name;
+        $this->name     = $name;
         $this->editable = true;
-        $this->tag = new Tag();
+        $this->tag      = new Tag();
     }
 
     public function setName($name)
@@ -58,8 +54,14 @@ abstract class Field
         return $this->editable;
     }
 
-    public function getTag(){
+    public function getTag()
+    {
         return $this->tag;
+    }
+
+    public function input($type)
+    {
+        return "<input type='$type' name = '$this->name' value = '$this->value' ".$this->tag->getFormClass().$this->tag->getFormId().$this->tag->getFormComplemento()." />";
     }
 
     public abstract function show();

@@ -30,6 +30,6 @@ class Label extends Field
      */
     public function show()
     {
-       return "<label". $this->tag->getFormClass() . $this->tag->getFormId(). $this->tag->getFormComplemento() . "> $this->texto </label>";
+       return "<label ". $this->tag->getFormClass() . $this->tag->getFormId(). $this->tag->getFormComplemento() . "> $this->texto </label>";
     }
 }

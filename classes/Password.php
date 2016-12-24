@@ -17,6 +17,6 @@ class Password extends Field
      */
     public function show()
     {
-        return "<input type='pasword' name = '$this->name' ". $this->tag->getFormClass() . $this->tag->getFormId(). $this->tag->getFormComplemento() . " />";
+        return $this->input('password');
     }
 }
