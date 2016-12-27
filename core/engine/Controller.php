@@ -1,20 +1,28 @@
 <?php
-
 namespace core\engine;
-
 class Controller
 {
-    private $method;
-    private $class;
-
-    public function __construct($method, $class)
+    // Caminha da pasta controller das suas filhas
+    const CAMINHO_CONTROLLER = 'application\\controller\\';
+    protected $view;
+    public function __construct()
     {
-        $this->method = $method;
-        $this->class  = $class;
+        $this->view = new View();
     }
 
-    public function executar(){
-        $newClass = new $class;
-        $newClass->$method;
+    // ucfirst: transforma a primeira letra em maiúsculo
+    public static function callController($metodo, $class)
+    {
+        $class = ucfirst($class);
+        if (class_exists(self::CAMINHO_CONTROLLER.$class)) {
+            eval('$controller = new '.self::CAMINHO_CONTROLLER.$class.'() ;');
+            if(method_exists(self::CAMINHO_CONTROLLER.$class, $metodo)){
+                 eval('$controller->'.$metodo.'();');
+            }else{
+                echo "Esse método não existe";
+            }
+        } else {
+            echo "Essa classe não existe";
+        }
     }
 }

@@ -54,7 +54,6 @@ class Tag
 
     function setFormComplemento($novoComplemento)
     {
-        $this->formComplemento = array_merge($this->formComplemento,
-            $novoComplemento);
+        $this->formComplemento = $novoComplemento;
     }
 }
