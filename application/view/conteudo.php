@@ -13,12 +13,12 @@
                 <div class="tab-content">
                     <div id="input" class="tab-pane fade in active">
                         <h3>Input</h3>
-                        <form class="form-horizontal">
-                            <input type='hidden' ng-model="form.input.tipo" ng-init="form.input.tipo = 'inputTipo'" />
+                        <form class="form-horizontal" ng-submit="form.submitInput()">
+                            <input type='hidden' ng-model="form.input.tipo" ng-init="form.typeInput.tipo = 'input'" />
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Tipo</label>
                                 <div class="col-sm-10">
-                                    <select class="form-control" ng-model="form.input.tipo">
+                                    <select class="form-control" ng-model="form.input.inputTipo" required>
                                         <option ng-selected=""></option>
                                         <option value="file">File</option>
                                         <option value="hidden">Hidden</option>
@@ -31,73 +31,73 @@
                             <div class="form-group">
                                 <label for="inputPassword3" class="col-sm-2 control-label">Name</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control"  placeholder="" ng-model="form.input.name">
+                                    <input type="text" class="form-control"  placeholder="" ng-model="form.input.name" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword3" class="col-sm-2 control-label">Value</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" placeholder="" ng-model="form.input.value">
+                                    <input type="text" class="form-control" placeholder="" ng-model="form.input.value" ng-init="form.input.value = ''">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword3" class="col-sm-2 control-label">Class</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" placeholder="" ng-model="form.input.class">
+                                    <input type="text" class="form-control" placeholder="" ng-model="form.input.class" ng-init="form.input.class = ''">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword3" class="col-sm-2 control-label">Id</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" placeholder="" ng-model="form.input.id">
+                                    <input type="text" class="form-control" placeholder="" ng-model="form.input.id" ng-init="form.input.id = ''">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword3" class="col-sm-2 control-label">Complemento</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" placeholder="style = 'color: #000' | onclick = 'alert()'" ng-model="form.input.complemento">
+                                    <input type="text" class="form-control" placeholder="style = 'color: #000' | onclick = 'alert()'" ng-model="form.input.complemento" ng-init="form.input.complemento = ''">
                                 </div>
                                 <span> Complementos separados por | </span>
                             </div>
-                            <button type="button" class="btn btn-primary" ng-click="form.submitInput()">Inserir campo no formulário</button>
+                            <button type="submit" class="btn btn-primary" >Inserir campo no formulário</button>
 
                             <div style="margin-top: 10px;" class="alert alert-success alert-dismissible fade in" ng-hide="!form.msgInput" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> Campo inserido </div>
                         </form>
                     </div>
                     <div id="select" class="tab-pane fade">
                         <h3>Select</h3>
-                        <form class="form-horizontal">
+                        <form class="form-horizontal"  ng-submit = "form.submitSelect()">
                             <input type='hidden' ng-model="form.select.tipo" ng-init="form.select.tipo = 'select'" />
                             <div class="form-group">
                                 <label for="inputPassword3" class="col-sm-2 control-label">Name</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control"  placeholder="" ng-model="form.select.name">
+                                    <input type="text" class="form-control"  placeholder="" ng-model="form.select.name" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword3" class="col-sm-2 control-label">Class</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" placeholder="" ng-model="form.select.class">
+                                    <input type="text" class="form-control" placeholder="" ng-model="form.select.class" ng-init="form.select.class = ''">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword3" class="col-sm-2 control-label">Id</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" placeholder="" ng-model="form.select.id">
+                                    <input type="text" class="form-control" placeholder="" ng-model="form.select.id" ng-init="form.select.id = ''">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword3" class="col-sm-2 control-label">Complemento</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" placeholder="style = 'color: #000' | onclick = 'alert()'" ng-model="form.select.complemento">
+                                    <input type="text" class="form-control" placeholder="style = 'color: #000' | onclick = 'alert()'" ng-model="form.select.complemento" ng-init="form.select.complemento = ''">
                                 </div>
                                 <span> Complementos separados por | </span>
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword3" class="col-sm-2 control-label">Option 1</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" placeholder="Nome " ng-model="form.select.option1.texto">
-                                    <input type="text" class="form-control" placeholder="Value" ng-model="form.select.option1.value">
+                                    <input type="text" class="form-control" placeholder="Nome " ng-model="form.select.option1.texto" required>
+                                    <input type="text" class="form-control" placeholder="Value" ng-model="form.select.option1.value" required>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -114,7 +114,7 @@
                                     <input type="text" class="form-control" placeholder="Value" ng-model="form.select.option3.value">
                                 </div>
                             </div>
-                            <button type="button" class="btn btn-primary" ng-click="form.submitSelect()">Inserir campo no formulário</button>
+                            <button type="submit" class="btn btn-primary">Inserir campo no formulário</button>
 
                             <div style="margin-top: 10px;" class="alert alert-success alert-dismissible fade in" ng-hide="!form.msgSelect" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> Campo inserido </div>
                         </form>

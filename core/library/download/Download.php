@@ -16,7 +16,7 @@ class Download
         $arquivoLocal = self::CAMINHO_ARQUIVO.$aquivoNome; // caminho absoluto do arquivo
         // Verifica se o arquivo não existe
         if (!file_exists($arquivoLocal)) {
-            echo "O arquivo $this->arquivo não existe. ";
+            echo "O arquivo ". self::ARQUIVO." não existe. ";
         } else {
             // Aqui você pode aumentar o contador de downloads
             // Definimos o novo nome do arquivo
@@ -30,6 +30,8 @@ class Download
             header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
             header('Pragma: public');
             header('Expires: 0');
+            readfile($arquivoLocal);
+            exit;
         }
     }
 }

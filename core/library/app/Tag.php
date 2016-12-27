@@ -5,14 +5,14 @@ class Tag
     private $formId;
     // @var String
     private $formClass;
-    // @var array associativo
+    // @var String
     private $formComplemento;
 
     function __construct()
     {
         $this->formId          = '';
         $this->formClass       = '';
-        $this->formComplemento = array();
+        $this->formComplemento = "";
     }
 
     public function getFormId()
@@ -35,11 +35,7 @@ class Tag
 
     function getFormComplemento()
     {
-        $tag = "";
-        foreach ($this->formComplemento as $key => $value) {
-            $tag = $tag." $key = '$value'";
-        }
-        return $tag." ";
+        return $this->formComplemento;
     }
 
     function setFormId($formId)

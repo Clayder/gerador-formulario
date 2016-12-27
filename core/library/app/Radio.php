@@ -6,7 +6,7 @@ class Radio extends Field
 {
     private $texto;
     private $isChecked;
-    public function __construct($name, $texto)
+    public function __construct($name, $texto = '')
     {
         parent::__construct($name);
         $this->texto = $texto;
@@ -31,6 +31,12 @@ class Radio extends Field
         }
     }
 
+    function setTexto($texto)
+    {
+        $this->texto = $texto;
+    }
+
+    
     /**
      * @inheritDoc
      */

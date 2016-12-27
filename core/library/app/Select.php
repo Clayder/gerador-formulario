@@ -41,10 +41,10 @@ class Select extends Field
     {
         $stringOpt = "";
         foreach ($this->options as $option) {
-            if (isset($option['value'])) {
-                $stringOpt = $stringOpt."<option value = '".$option['value']."'>".$option['texto']."</option>\n";
+            if (isset($option->value)) {
+                $stringOpt = $stringOpt."<option value = '".$option->value."'>".$option->texto."</option>\n";
             } else if (isset($option['selected'])){
-                $stringOpt = $stringOpt."<option selected = '".$option['selected']."'>".$option['texto']."</option>\n";
+                $stringOpt = $stringOpt."<option selected = '".$option->selected."'>".$option->texto."</option>\n";
             }
         }
         return $stringOpt;
@@ -55,6 +55,6 @@ class Select extends Field
      */
     public function show()
     {
-        return "<span> $this->texto </span> "."\n".$this->openSelect() ."\n".$this->getOptions()."\n".$this->closeSelect();
+        return $this->openSelect() ."\n".$this->getOptions()."\n".$this->closeSelect();
     }
 }

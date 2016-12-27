@@ -135,3 +135,57 @@ echo $form->show();
 Arquivo::criar($form->show());
 
 //Download::executar();
+
+
+switch ($campo->inputTipo) {
+                    case "file":
+                        $label    = new Label($campo->name);
+                        $form->add($label);
+                        $file     = new File($campo->name);
+                        $file->getTag()->setFormId($campo->id);
+                        $file->getTag()->setFormClass($campo->class);
+                        $style    = $this->complemento($campo->complemento);
+                        $file->getTag()->setFormComplemento($style);
+                        $form->add($file);
+                        break;
+                    case "hidden":
+                        $hidden   = new Hidden($campo->name);
+                        $hidden->getTag()->setFormId($campo->id);
+                        $hidden->getTag()->setFormClass($campo->class);
+                        $style    = $this->complemento($campo->complemento);
+                        $hidden->getTag()->setFormComplemento($style);
+                        $form->add($hidden);
+                        break;
+                    case "password":
+                        $label    = new Label($campo->name);
+                        $form->add($label);
+                        $password = new Password($campo->name);
+                        $password->getTag()->setFormId($campo->id);
+                        $password->getTag()->setFormClass($campo->class);
+                        $style    = $this->complemento($campo->complemento);
+                        $password->getTag()->setFormComplemento($style);
+                        $form->add($password);
+                        break;
+                    case "text":
+                        $label    = new Label($campo->name);
+                        $form->add($label);
+                        $text     = new Text($campo->name);
+                        $text->getTag()->setFormId($campo->id);
+                        $text->getTag()->setFormClass($campo->class);
+                        $style    = $this->complemento($campo->complemento);
+                        $text->getTag()->setFormComplemento($style);
+                        $form->add($text);
+                        break;
+                    case "textarea":
+                        $label    = new Label($campo->name);
+                        $form->add($label);
+                        $textarea = new TextArea($campo->name);
+                        $textarea->getTag()->setFormId($campo->id);
+                        $textarea->getTag()->setFormClass($campo->class);
+                        $style    = $this->complemento($campo->complemento);
+                        $textarea->getTag()->setFormComplemento($style);
+                        $form->add($textarea);
+                        break;
+                    default:
+                        break;
+                }
