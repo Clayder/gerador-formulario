@@ -20,6 +20,7 @@ angular.module('notesApp', [])
 
                 var item = new Object();
                 item = app.select;
+                item.tipo = app.typeSelect.tipo;
                 objForm.push(item);
                 console.log(app.select);
                 app.select = "";
@@ -28,17 +29,23 @@ angular.module('notesApp', [])
             };
             app.submitRadio = function () {
                 var item = new Object();
-                item = app.radio;
+                item = app.radio
+                item.tipo = app.typeRadio.tipo;
                 objForm.push(item);
                 console.log(app.radio);
                 app.radio = "";
                 console.log(objForm);
                 app.msgRadio = true;
             };
-
+            
+            app.baixar = function(){
+                app.exibirBaixar = false;
+            }
+            
             app.enviar = function () {
                 var myJsonString = JSON.stringify(objForm);
                 console.log(myJsonString);
+                objForm = [] ;
                 var teste = new Object();
                 teste.um = 1;
                 teste.dois = 2;
@@ -54,11 +61,13 @@ angular.module('notesApp', [])
                     },
                     success: function (retorno) {
                         console.log(retorno);
+                        
                     },
                     error: function (erro) {
                         console.log(erro.responseText);
                     }
                 });
+                app.exibirBaixar = !app.exibirBaixar ;
             };
         });
 

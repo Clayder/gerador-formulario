@@ -3,11 +3,11 @@
         <div class="cover-container">
             <div class="inner cover">
                 <button style="margin-bottom: 20px;" class='btn btn-success btn-block' ng-click="form.enviar()"> Gerar Formulário </button>
+                <a href = "<?= base_url("index.php?class=home&metodo=baixar_formulario"); ?>" ng-click="form.baixar()" ng-hide="!form.exibirBaixar" style="margin-bottom: 20px;" class='btn btn-info btn-block'> Baixar Formulário </a>
                 <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="tab" href="#input">Input</a></li>
                     <li><a data-toggle="tab" href="#select">Select</a></li>
                     <li><a data-toggle="tab" href="#radio">Radio</a></li>
-                    <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
                 </ul>
 
                 <div class="tab-content">
@@ -67,7 +67,7 @@
                     <div id="select" class="tab-pane fade">
                         <h3>Select</h3>
                         <form class="form-horizontal"  ng-submit = "form.submitSelect()">
-                            <input type='hidden' ng-model="form.select.tipo" ng-init="form.select.tipo = 'select'" />
+                            <input type='hidden' ng-model="form.select.tipo" ng-init="form.typeSelect.tipo = 'select'" />
                             <div class="form-group">
                                 <label for="inputPassword3" class="col-sm-2 control-label">Name</label>
                                 <div class="col-sm-10">
@@ -123,7 +123,7 @@
                         <h3>Radio</h3>
 
                         <form class="form-horizontal">
-                            <input type='hidden' ng-model="form.radio.tipo" ng-init="form.radio.tipo = 'radio'" />
+                            <input type='hidden' ng-model="form.radio.tipo" ng-init="form.typeRadio.tipo = 'radio'" />
                             <div class="form-group">
                                 <label for="inputPassword3" class="col-sm-2 control-label">Name</label>
                                 <div class="col-sm-10">
@@ -175,19 +175,10 @@
                             <div style="margin-top: 10px;" class="alert alert-success alert-dismissible fade in" ng-hide="!form.msgRadio" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> Campo inserido </div>
                         </form>
                     </div>
-                    <div id="menu3" class="tab-pane fade">
-                        <h3>Menu 3</h3>
-                        <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                    </div>
+                   
                 </div>
             </div>
-            <!--
-                        <div class="mastfoot">
-                            <div class="inner">
-                                <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-                            </div>
-                        </div>
-            -->
+           
         </div>
 
     </div>
