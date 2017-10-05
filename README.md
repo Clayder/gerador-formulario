@@ -13,4 +13,4 @@ Trabalho desenvolvido para a disciplina de Frameworks (UFF).
 
 ### Demo ###
 
-* [DEMO](http://www.uff.pxcode.com.br/gerador-form/)
+* [DEMO](http://www.uff.peterclayder.com.br/gerador-form/)
